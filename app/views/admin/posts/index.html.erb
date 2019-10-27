@@ -1,0 +1,14 @@
+<p><%= link_to "Add post", [:new, :admin, :post] %></p>
+
+<% @posts.each do |post| %>
+  <article>
+    <h3>
+      <%= post.title %>
+    </h3>
+    <p>
+      <%= link_to "Edit", [:edit, :admin, post] %>
+      |
+      <%= link_to "Delete", [:admin, post], method: :delete %>
+    </p>
+  </article>
+<% end %>
