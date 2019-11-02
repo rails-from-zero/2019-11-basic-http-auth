@@ -1,4 +1,5 @@
 class Admin::PostsController < ApplicationController
+  http_basic_authenticate_with Rails.application.credentials.fetch(:admin)
   before_action :set_post, only: [:edit, :update, :destroy]
 
   def index
